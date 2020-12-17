@@ -106,34 +106,48 @@ namespace TestTask
         /// <summary>
         /// метод вычеслиния f(x,y)
         /// </summary>
+        public static double LinearFunction(double VariableA, double VariableB, int VariableCNumber, double VariableX, double VariableY)
+            =>(VariableA * VariableX) + (VariableB * Math.Pow(VariableY, 0)) + VariableCNumber;
+
+        public static double QuadraticFunction(double VariableA, double VariableB, int VariableCNumber, double VariableX, double VariableY)
+            =>(VariableA * Math.Pow(VariableX, 2)) + (VariableB * Math.Pow(VariableY, 1)) + VariableCNumber;
+
+        public static double СubicFunction(double VariableA, double VariableB, int VariableCNumber, double VariableX, double VariableY)
+            => (VariableA * Math.Pow(VariableX, 3)) + (VariableB * Math.Pow(VariableY, 2)) + VariableCNumber;
+
+        public static double FourthDegreeFunction(double VariableA, double VariableB, int VariableCNumber, double VariableX, double VariableY)
+            => (VariableA * Math.Pow(VariableX, 4)) + (VariableB * Math.Pow(VariableY, 3)) + VariableCNumber;
+
+        public static double FifthDegreeFunction(double VariableA, double VariableB, int VariableCNumber, double VariableX, double VariableY)
+            => (VariableA * Math.Pow(VariableX, 5)) + (VariableB * Math.Pow(VariableY, 4)) + VariableCNumber;
 
         private void CalculateSum()
         {
             switch (Title)
             {
                 case "Линейная":
-                    Result = (VariableA * VariableX) + (VariableB * Math.Pow(VariableY, 0)) + VariableCNumber;
+                    Result= LinearFunction(VariableA,VariableB,VariableCNumber,VariableX,VariableY);
                     OnPropertyChanged("Result");
                     break;
                 case "квадратичная":
-                    Result = (VariableA * Math.Pow(VariableX, 2)) + (VariableB * Math.Pow(VariableY, 1)) + VariableCNumber;
+                    Result = QuadraticFunction(VariableA, VariableB, VariableCNumber, VariableX, VariableY);
                     OnPropertyChanged("Result");
                     break;
                 case "кубическая":
-                    Result = (VariableA * Math.Pow(VariableX, 3)) + (VariableB * Math.Pow(VariableY, 2)) + VariableCNumber;
+                    Result = СubicFunction(VariableA, VariableB, VariableCNumber, VariableX, VariableY);
                     OnPropertyChanged("Result");
                     break;
-                case "4-ой степен":
-                    Result = (VariableA * Math.Pow(VariableX, 4)) + (VariableB * Math.Pow(VariableY, 3)) + VariableCNumber;
+                case "4-ой степени":
+                    Result = FourthDegreeFunction(VariableA, VariableB, VariableCNumber, VariableX, VariableY);
                     OnPropertyChanged("Result");
                     break;
                 case "5-ой степени":
-                    Result = (VariableA * Math.Pow(VariableX, 5)) + (VariableB * Math.Pow(VariableY, 4)) + VariableCNumber;
+                    Result = FifthDegreeFunction(VariableA, VariableB, VariableCNumber, VariableX, VariableY);
                     OnPropertyChanged("Result");
                     break;
             }
         }
-    
+        
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = null)
         {

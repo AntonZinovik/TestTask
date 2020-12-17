@@ -30,7 +30,7 @@ namespace TestTask
             List<int> Numbers = new List<int> { 1, 2, 3, 4, 5 };
             List<int> Numbers1 = new List<int> { 10, 20, 30, 40, 50 };
             List<int> Numbers2 = new List<int> { 100, 200, 300, 400, 500 };
-            List<int> Numbers3 = new List<int> { 1000, 200, 300, 400, 500 };
+            List<int> Numbers3 = new List<int> { 1000, 2000, 3000, 4000, 5000 };
             List<int> Numbers4 = new List<int> { 10000, 20000, 30000, 40000, 50000 };
             Functions = new ObservableCollection<Function>
             {
