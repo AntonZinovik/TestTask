@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MVVM
+namespace TestTask
 {
     public class Function : INotifyPropertyChanged
     {
@@ -33,10 +30,12 @@ namespace MVVM
             get { return variableA; }
             set
             {
-                if (variableA != value) {
+                if (variableA != value)
+                {
                     variableA = value;
                     OnPropertyChanged("VariableA");
-                    CalculateSum(); }
+                    CalculateSum();
+                }
             }
         }
         public double VariableB
@@ -44,9 +43,12 @@ namespace MVVM
             get { return variableB; }
             set
             {
-                variableB = value;
-                OnPropertyChanged("VariableB");
-                CalculateSum();
+                if (variableB != value)
+                {
+                    variableB = value;
+                    OnPropertyChanged("VariableB");
+                    CalculateSum();
+                }
             }
         }
         public List<int> VariableC
@@ -64,9 +66,12 @@ namespace MVVM
             get { return variableX; }
             set
             {
-                variableX = value;
-                OnPropertyChanged("VariableX");
-                CalculateSum();
+                if (variableB != value)
+                {
+                    variableX = value;
+                    OnPropertyChanged("VariableX");
+                    CalculateSum();
+                }
             }
         }
         public int VariableCNumber
@@ -84,9 +89,12 @@ namespace MVVM
             get { return variableY; }
             set
             {
-                variableY = value;
-                OnPropertyChanged("VariableY");
-                CalculateSum();
+                if (variableB != value)
+                {
+                    variableY = value;
+                    OnPropertyChanged("VariableY");
+                    CalculateSum();
+                }
             }
         }
         public double Result
@@ -95,7 +103,7 @@ namespace MVVM
         }
 
 
-              
+
 
         private void CalculateSum()
         {
@@ -106,15 +114,15 @@ namespace MVVM
                     OnPropertyChanged("Result");
                     break;
                 case "квадратичная":
-                   Result = (VariableA * Math.Pow(VariableX, 2)) + (VariableB * Math.Pow(VariableY, 1)) + VariableCNumber;
+                    Result = (VariableA * Math.Pow(VariableX, 2)) + (VariableB * Math.Pow(VariableY, 1)) + VariableCNumber;
                     OnPropertyChanged("Result");
                     break;
                 case "кубическая":
-                    Result = (VariableA * Math.Pow(VariableX, 3)) + (VariableB * Math.Pow(VariableY, 2)) +VariableCNumber;
+                    Result = (VariableA * Math.Pow(VariableX, 3)) + (VariableB * Math.Pow(VariableY, 2)) + VariableCNumber;
                     OnPropertyChanged("Result");
                     break;
                 case "4-ой степен":
-                   Result = (VariableA * Math.Pow(VariableX, 4)) + (VariableB * Math.Pow(VariableY, 3)) + VariableCNumber;
+                    Result = (VariableA * Math.Pow(VariableX, 4)) + (VariableB * Math.Pow(VariableY, 3)) + VariableCNumber;
                     OnPropertyChanged("Result");
                     break;
                 case "5-ой степени":
@@ -124,7 +132,7 @@ namespace MVVM
 
             }
         }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = null)
         {
