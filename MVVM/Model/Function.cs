@@ -103,7 +103,9 @@ namespace TestTask
         }
 
 
-
+        /// <summary>
+        /// метод вычеслиния f(x,y)
+        /// </summary>
 
         private void CalculateSum()
         {
@@ -129,10 +131,9 @@ namespace TestTask
                     Result = (VariableA * Math.Pow(VariableX, 5)) + (VariableB * Math.Pow(VariableY, 4)) + VariableCNumber;
                     OnPropertyChanged("Result");
                     break;
-
             }
         }
-
+    
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = null)
         {

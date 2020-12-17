@@ -9,9 +9,9 @@ namespace TestTask
     {
         private Function selectedFunction;
         public ObservableCollection<Function> Functions { get; set; }
-        public double ResultAuto;
-        public List<int> Numbers;
-
+        /// <summary>
+        /// метод получиние выбранного объекта
+        /// </summary>
         public Function SelectedFunction
         {
             get { return selectedFunction; }
@@ -22,7 +22,9 @@ namespace TestTask
             }
         }
 
-
+        /// <summary>
+        /// метод заполнения данными 
+        /// </summary>
         public ApplicationViewModel()
         {
             List<int> Numbers = new List<int> { 1, 2, 3, 4, 5 };
@@ -40,7 +42,9 @@ namespace TestTask
                 new Function {Title="5-ой степени",VariableC=Numbers4}
             };
         }
-
+        /// <summary>
+        /// метод для изменение свойств
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
